@@ -19,12 +19,17 @@ public class SpikeGenerator : MonoBehaviour
     }
 
     public void generateSpike()
-    {
-        GameObject SpikeIns = Instantiate(spike, transform.position, transform.rotation);
+{
+    float xPos = 2.5f; // fixed distance between spikes
+    Vector3 spawnPosition = new Vector3(transform.position.x + xPos, transform.position.y, transform.position.z);
 
-        SpikeIns.GetComponent<SpikeScript>().spikeGenerator = this;                             // Changed "spikeIns" to "SpikeIns" and "getComponent" to "GetComponent". changed "SpikeSprite"
-    }
+    GameObject SpikeIns = Instantiate(spike, spawnPosition, transform.rotation);
 
+    SpikeIns.GetComponent<SpikeScript>().spikeGenerator = this;
+
+    Invoke("generateSpike", Random.Range(2.0f, 4.0f)); // call generateSpike() again after a random delay
+}
+// Changed "spikeIns" to "SpikeIns" and "getComponent" to "GetComponent". changed "SpikeSprite"
     // Update is called once per frame
     void Update()
     {
