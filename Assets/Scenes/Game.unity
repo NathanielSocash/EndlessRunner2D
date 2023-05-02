@@ -1332,6 +1332,6 @@ MonoBehaviour:
   spike: {fileID: 5730658903030768857, guid: a6c39315b5e79fc42b4bea1ee6bee58a, type: 3}
   BGScroll: {fileID: 1638663430}
   MinSpeed: 5
-  MaxSpeed: 12
+  MaxSpeed: 30
   currentSpeed: 0
-  SpeedMultiplier: 0.00015
+  SpeedMultiplier: 0.0004
